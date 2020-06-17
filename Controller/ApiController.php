@@ -1,6 +1,6 @@
 <?php
 
-namespace MauticPlugin\CsvImportBundle\Controller\ApiController;
+namespace MauticPlugin\CsvImportBundle\Controller;
 
 use FOS\RestBundle\Util\Codes;
 use JMS\Serializer\SerializationContext;
