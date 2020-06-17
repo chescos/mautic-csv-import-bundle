@@ -1,6 +1,6 @@
 <?php
 
-namespace Mautic\LeadBundle\Controller\Api;
+namespace MauticPlugin\CsvImportBundle\Controller\ApiController;
 
 use FOS\RestBundle\Util\Codes;
 use JMS\Serializer\SerializationContext;
@@ -29,7 +29,8 @@ class ApiController extends CommonApiController
     *
     * Example usage from cURL:
     * curl -X POST -H 'Authorization: Basic ...' -F 'file=@path/to/contacts.csv' \
-    *      -F 'mapping={"email":"email","firstname":"first_name"}' http://mautic.local/api/contacts/importCsv
+    *      -F 'mapping={"email":"email","firstname":"first_name"}' \
+    *      http://mautic.local/api/custom/importCsv
     *
     * @return \Symfony\Component\HttpFoundation\Response
     */
