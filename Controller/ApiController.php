@@ -103,7 +103,7 @@ class ApiController extends CommonApiController
         ];
 
         foreach ($mapping as $csvField => $leadField) {
-            if (!isset($leadFields[$leadField]) && !isset($specialFields[$leadField])) {
+            if (!isset($leadFields[$leadField]) && !in_array($leadField, $specialFields)) {
                 return $this->badRequest('Unrecognized column mapping field: '.$leadField);
             }
         }
