@@ -88,8 +88,22 @@ class ApiController extends CommonApiController
         $fieldModel = $this->getModel('lead.field');
         $leadFields = $fieldModel->getFieldList(false, false);
 
+        $specialFields = [
+            'dateAdded',
+            'createdByUser',
+            'dateModified',
+            'modifiedByUser',
+            'lastActive',
+            'dateIdentified',
+            'ip',
+            'points',
+            'stage',
+            'doNotEmail',
+            'ownerusername',
+        ];
+
         foreach ($mapping as $csvField => $leadField) {
-            if (!isset($leadFields[$leadField])) {
+            if (!isset($leadFields[$leadField]) && !isset($specialFields[$leadField])) {
                 return $this->badRequest('Unrecognized column mapping field: '.$leadField);
             }
         }
